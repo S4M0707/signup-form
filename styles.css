@@ -1,0 +1,65 @@
+:root {
+    --button-color: #596D48;
+}
+
+@font-face {
+    font-family: no-fudge;
+    src: url(./fonts/NoFudgeGivenDEMO-Regular.otf);
+}
+
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#bk-section {
+    width: 35vw;
+    background-image: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#bk-section > h1 {
+    font-family: no-fudge, 'Times New Roman', Times, serif;
+    font-size: 6vw;
+    color: whitesmoke;
+    position: relative;
+    top: 15vh;
+    text-align: center;
+    background-color: #00000070;
+}
+
+#form-section {
+    width: 65vw;
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#form-section > p {
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6rem;
+}
+
+#form-section h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#form-section > label {
+    f
+}
