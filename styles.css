@@ -45,11 +45,8 @@ main {
 
 #form-section {
     width: 65vw;
-    /* padding: 5vh; */
     display: flex;
     flex-direction: column;
-    /* align-items: end; */
-    /* justify-content: center; */
     position: relative;
     background-color: var(--tint-wt-color);
 }
@@ -67,7 +64,6 @@ main {
 #form-section>.frm {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     height: max(44vh, min-content);
     background-color: white;
     padding-left: var(--paddig_hori);
@@ -90,12 +86,9 @@ main {
 }
 
 .inputs-container>div {
-    /* position: fixed; */
     display: flex;
     flex-direction: column;
-    /* margin-top: 1vh; */
     margin-bottom: 3vh;
-    /* align-items:center; */
 }
 
 input {
@@ -109,7 +102,6 @@ input {
 }
 
 input:focus {
-    /* outline: ; */
     outline-color: blue;
 }
 
@@ -147,4 +139,8 @@ a {
     text-decoration: none;
     color: var(--button-color);
     font-weight: bolder;
+}
+
+input:invalid {
+    outline-color: red;
 }
