@@ -1,7 +1,6 @@
 :root {
     --button-color: #596D48;
     --tint-wt-color: whitesmoke;
-    --paddig_hori: 5vw;
 }
 
 @font-face {
@@ -13,88 +12,108 @@ body {
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(55, 21, 21);
+    background-color: var(--tint-wt-color);
 }
 
 main {
     height: 100vh;
+    height: 100svh;
     width: 100vw;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #bk-section {
-    width: 35vw;
-    background-image: url(./images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    flex: 0;
+    height: 100%;
+    min-width: auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+}
+
+#bk-section>img {
+    height: 99%;
 }
 
 #bk-section>h1 {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+
     font-family: no-fudge, 'Times New Roman', Times, serif;
-    font-size: 6vw;
+    font-size: clamp(3rem, 5vh + 1rem , 6rem);
     color: var(--tint-wt-color);
-    position: relative;
-    top: 9.2vh;
     text-align: center;
     background-color: #00000070;
 }
 
 #form-section {
-    width: 65vw;
+    flex: 1;
+    min-width: 50%;
+
     display: flex;
     flex-direction: column;
     position: relative;
+
     background-color: var(--tint-wt-color);
+
+    --paddig_hori: 5%;
 }
 
 #form-section>p {
-    margin-top: 10vh;
+    flex: 1;
     height: min-content;
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1.6rem;
-    padding-left: var(--paddig_hori);
-    padding-right: var(--paddig_hori);
+
+    font-size: clamp(1.2rem, calc(calc(0.5vw + 0.5vh) + 1rem), 1.8rem);
+    font-weight: 600;
+    line-height: clamp(1.6rem, calc(calc(0.5vw + 0.5vh) + 1.2rem), 1.7rem);
+
+    display: flex;
+    align-items: end;
+
+    padding:  0 var(--paddig_hori) 0 var(--paddig_hori);
 }
 
 #form-section>.frm {
+    flex: 1;
+    height: min-content;
+    
     display: flex;
     flex-direction: column;
-    height: max(44vh, min-content);
+
     background-color: white;
-    padding-left: var(--paddig_hori);
-    padding-right: var(--paddig_hori);
+
+    padding: 0 var(--paddig_hori) 2% var(--paddig_hori);
 }
 
 .frm>h2 {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: clamp(1.2rem, calc(calc(0.5vw + 0.5vh) + 1rem), 1.8rem);
+    font-weight: bolder;
 }
 
 .frm>.inputs-container {
     text-transform: uppercase;
     font-size: 0.8rem;
+
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 10%;
     align-items: stretch;
+
     width: 80%;
 }
 
 .inputs-container>div {
+    width: 40%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3vh;
+    margin: 1%;
 }
 
 input {
     /* appearance: none; */
     font-size: 1rem;
-    width: 20vw;
+    width: 100%;
     height: 1.5rem;
     background-color: var(--tint-wt-color);
     border: 1px solid rgb(178, 178, 178);
@@ -105,27 +124,24 @@ input:focus {
     outline-color: blue;
 }
 
-#form-section>.btn {
-    height: max(44vh, min-content);
-    padding-left: var(--paddig_hori);
-    padding-right: var(--paddig_hori);
-    position: relative;
+input:invalid {
+    outline-color: red;
 }
 
-.btn>button,
-.btn>p {
-    position: relative;
-    top: 5vh;
-    /* background-color: var(--button-color); */
+#form-section>.btn {
+    flex: 1;
+    padding: 4% var(--paddig_hori) 0 var(--paddig_hori);
 }
 
 .btn>button {
     font-size: 1rem;
     font-weight: bolder;
     color: var(--tint-wt-color);
+
     background-color: var(--button-color);
-    width: 15vw;
-    height: 7vh;
+    width: max(min-content, 10%);
+    height: 2rem;
+
     border-radius: 0.4rem;
     border: 1px solid rgb(24, 86, 0);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.751);
@@ -139,8 +155,4 @@ a {
     text-decoration: none;
     color: var(--button-color);
     font-weight: bolder;
-}
-
-input:invalid {
-    outline-color: red;
 }
